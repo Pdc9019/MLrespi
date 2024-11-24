@@ -3,6 +3,7 @@ import numpy as np
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
+
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -17,7 +18,7 @@ ruta_calidad_aire = r"C:\Users\benja\Documents\GitHub\MLrespi\Datos\MP25\elbosqu
 data_emergencias = pd.read_csv(ruta_emergencias)
 data_calidad_aire = pd.read_csv(ruta_calidad_aire)
 
-# Filtrar para eliminar años 2020 y 2021
+# Filtrar para eliminar años 2020 y 2021 (por el covid 19)
 data_emergencias = data_emergencias[~data_emergencias['Anio'].isin([2020, 2021])]
 data_calidad_aire = data_calidad_aire[~data_calidad_aire['Anio'].isin([2020, 2021])]
 
